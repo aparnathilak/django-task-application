@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block body%}
+
+{%if messages%}
+<div class="row">
+   <div class="col-4"></div>
+   <div class="col-4">
+       {%for msg in messages%}
+         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>{{msg}}</strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+       {%endfor%}
+   </div>
+   <div class="col-4"></div>
+</div>
+{%endif%}
+<div class="bg-secondary text-white text-center">
+    <h1 class="pt-5 ">Task Application</h1>
+    <h6 class="pb-5">welcome {{request.user}}</h6>
+</div>
+{%endblock%}
